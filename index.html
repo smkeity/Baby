@@ -8,14 +8,13 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-image: url('background.jpg');  /* 背景画像 */
-            background-size: cover;  /* 画面いっぱいに表示 */
-            background-position: center;  /* 画像を中央配置 */
-            background-repeat: no-repeat;  /* 繰り返しなし */
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             position: relative;
         }
 
-        /* 背景を薄くするためのオーバーレイ */
         body::before {
             content: "";
             position: absolute;
@@ -23,8 +22,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.6);  /* 白の半透明レイヤー */
+            background-color: rgba(255, 255, 255, 0.6);
             z-index: -1;
+        }
+
+        /* タイトルのフォントサイズを小さく */
+        h1 {
+            font-size: 24px;  /* 例: 少し小さく */
         }
 
         #babyImage {
@@ -36,8 +40,11 @@
             transition: clip-path 5s ease-out, opacity 5s ease-out;
         }
 
+        /* 画像の下のテキストを大きく */
         #resultText {
             opacity: 0;
+            font-size: 20px;  /* 例: 少し大きく */
+            font-weight: bold; /* 文字を少し太くする */
             transition: opacity 2s ease-in;
             margin-top: 10px;
         }
