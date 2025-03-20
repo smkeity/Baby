@@ -17,21 +17,32 @@
             clip-path: inset(0 0 100% 0);  /* 最初は完全に隠す */
             transition: clip-path 5s ease-out, opacity 5s ease-out;
         }
+        #resultText {
+            opacity: 0;  /* 初期状態では非表示 */
+            transition: opacity 2s ease-in;  /* 2秒かけてフェードイン */
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
     <h1>赤ちゃんの性別が分かりました！</h1>
     <p>男の子かな？それとも女の子かな？</p>
-
     <button onclick="showImage()">性別を確認する</button>
     <img id="babyImage" src="baby.png" alt="赤ちゃんの画像">
+    <p id="resultText">男の子/女の子でした！</p>
 
     <script>
         function showImage() {
             let img = document.getElementById("babyImage");
-            img.style.opacity = "1";  
+            let text = document.getElementById("resultText");
+            img.style.opacity = "1";
             img.style.clipPath = "inset(0 0 0 0)";  // 上から下へ徐々に表示
+
+　　　　　　　　// 5秒後（画像が表示された直後）にテキストを表示
+            setTimeout(() => {
+                text.style.opacity = "1";
+            }, 5000);  // 5000ms = 5秒
         }
     </script>
 
