@@ -8,18 +8,37 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
+            background-image: url('background.jpg');  /* 背景画像 */
+            background-size: cover;  /* 画面いっぱいに表示 */
+            background-position: center;  /* 画像を中央配置 */
+            background-repeat: no-repeat;  /* 繰り返しなし */
+            position: relative;
         }
+
+        /* 背景を薄くするためのオーバーレイ */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);  /* 白の半透明レイヤー */
+            z-index: -1;
+        }
+
         #babyImage {
             display: block;
             margin: auto;
-            width: 250px;  /* 画像サイズを適宜調整 */
+            width: 200px;
             opacity: 0;
-            clip-path: inset(0 0 100% 0);  /* 最初は完全に隠す */
+            clip-path: inset(0 0 100% 0);
             transition: clip-path 5s ease-out, opacity 5s ease-out;
         }
+
         #resultText {
-            opacity: 0;  /* 初期状態では非表示 */
-            transition: opacity 2s ease-in;  /* 2秒かけてフェードイン */
+            opacity: 0;
+            transition: opacity 2s ease-in;
             margin-top: 10px;
         }
     </style>
@@ -36,13 +55,13 @@
         function showImage() {
             let img = document.getElementById("babyImage");
             let text = document.getElementById("resultText");
-            img.style.opacity = "1";
-            img.style.clipPath = "inset(0 0 0 0)";  // 上から下へ徐々に表示
 
-　　　　　　　　// 5秒後（画像が表示された直後）にテキストを表示
+            img.style.opacity = "1";  
+            img.style.clipPath = "inset(0 0 0 0)";
+
             setTimeout(() => {
                 text.style.opacity = "1";
-            }, 5000);  // 5000ms = 5秒
+            }, 5000);
         }
     </script>
 
