@@ -48,6 +48,15 @@
             transition: opacity 2s ease-in;
             margin-top: 10px;
         }
+        /* 追加: テキストの下に表示する画像 */
+        #extraImage {
+            display: block;
+            margin: auto;
+            width: 150px;
+            opacity: 0;
+            transition: opacity 2s ease-in;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -57,17 +66,24 @@
     <button onclick="showImage()">性別を確認する</button>
     <img id="babyImage" src="baby.png" alt="赤ちゃんの画像">
     <p id="resultText">男の子/女の子でした！</p>
-
+    <img id="extraImage" src="extra.png" alt="追加画像"> <!-- 追加画像 -->
+        
     <script>
         function showImage() {
             let img = document.getElementById("babyImage");
             let text = document.getElementById("resultText");
+            let extraImg = document.getElementById("extraImage");
 
             img.style.opacity = "1";  
             img.style.clipPath = "inset(0 0 0 0)";
 
             setTimeout(() => {
                 text.style.opacity = "1";
+
+                // さらに2秒後に画像を表示
+                setTimeout(() => {
+                    extraImg.style.opacity = "1";
+                }, 1000);
             }, 3000);
         }
     </script>
