@@ -71,7 +71,18 @@
             opacity: 0;
             position: absolute;
             bottom: -50px; /* 初めは画面の外に */
-            left: 30%;  /* 画面の左寄り（右にしたい場合は right: 20%） */
+            left: 10%;  /* 画面の左寄り（右にしたい場合は right: 20%） */
+            transition: opacity 1s ease-in, transform 3s ease-out;
+        }
+        /* バルーン画像の初期位置（画面の下） */
+        #balloontwo {
+            display: block;
+            margin: auto;
+            width: 50px;
+            opacity: 0;
+            position: absolute;
+            bottom: 50px; /* 初めは画面の外に */
+            right: 30%;  /* 画面の左寄り（右にしたい場合は right: 20%） */
             transition: opacity 1s ease-in, transform 3s ease-out;
         }
     </style>
@@ -85,6 +96,7 @@
     <p id="resultText">男の子/女の子でした！</p>
     <img id="extraImage" src="boy.png" alt="追加画像"> <!-- 追加画像 -->
     <img id="balloon" src="balloon3.png" alt="バルーンの画像"> <!-- バルーン画像 -->
+    <img id="balloontwo" src="balloon4.png" alt="バルーンの画像"> <!-- バルーン画像 -->
         
     <script>
         function showImage() {
@@ -92,6 +104,7 @@
             let text = document.getElementById("resultText");
             let extraImg = document.getElementById("extraImage");
             let balloon = document.getElementById("balloon");
+            let balloontwo = document.getElementById("balloontwo");
 
             img.style.opacity = "1";  
             img.style.clipPath = "inset(0 0 0 0)";
@@ -105,9 +118,13 @@
                     setTimeout(() => {
                         balloon.style.opacity = "1";
                         balloon.style.transform = "translateY(-200px)";
+                        balloontwo.style.opacity = "1";
+                        balloontwo.style.transform = "translateY(-200px)";
                         setTimeout(() => {
                             balloon.style.opacity = "0";
                             balloon.style.transform = "translateY(-400px)";
+                            balloontwo.style.opacity = "0";
+                            balloontwo.style.transform = "translateY(-400px)";
                         }, 2000);
                     }, 500);
                 }, 0);
