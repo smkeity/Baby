@@ -35,14 +35,16 @@
             font-size: 20px;  /* 例: 少し大きく */
             font-weight: bold; /* 文字を少し太くする */
         }
-
-        #babyImage {
+        #babyImage, #babyVideo, #midiText {
             display: block;
             margin: auto;
-            width: 200px;
             opacity: 0;
-            clip-path: inset(0 0 100% 0);
-            transition: clip-path 3s ease-out, opacity 3s ease-out;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        #babyVideo {
+            clip-path: inset(0 0 100% 0); /* 上からスライド表示 */
+            transition: clip-path 2s ease-out, opacity 2s ease-out;
         }
 
         /* 画像の下のテキストを大きく */
@@ -53,15 +55,7 @@
             transition: opacity 2s ease-in;
             margin-top: 10px;
         }
-        /* 追加: テキストの下に表示する画像 */
-/*       #extraImage {*/
-            /*display: block;*/
-            /*margin: auto;*/
-            /*width: 200px;*/
-            /*opacity: 0;*/
-            /*transition: opacity 2s ease-in;*/
-            /*margin-top: 10px;*/
-          /*}*/
+
         /*バルーン画像の初期位置（画面の下） */
         #balloon {
             display: block;
@@ -93,15 +87,16 @@
     <p>どっちかな？</p>
     <button onclick="showImage()">性別を確認する</button>
     <img id="babyImage" src="baby.png" alt="赤ちゃんの画像">
-    <p id="resultText">男の子/女の子でした！</p>
+    <p id="midiText">これは付いてないかな？</p>
     <video id="babyVideo" width="200" muted loop>
         <source src="baby.mp4" type="video/mp4">
         お使いのブラウザは動画タグをサポートしていません。
     </video>
     
+    <p id="resultText">男の子でした！</p>
     
-        
-    <img id="extraImage" src="boy.png" alt="追加画像"> <!-- 追加画像 -->
+    
+    
     <img id="balloon" src="balloon3.png" alt="バルーンの画像"> <!-- バルーン画像 -->
     <img id="balloontwo" src="balloon4.png" alt="バルーンの画像"> <!-- バルーン画像 -->       
            
@@ -109,7 +104,7 @@
         function showImage() {
             let img = document.getElementById("babyImage");
             let text = document.getElementById("resultText");
-            let extraImg = document.getElementById("extraImage");
+            let text = document.getElementById("resultText");
             let balloon = document.getElementById("balloon");
             let balloontwo = document.getElementById("balloontwo");
 
