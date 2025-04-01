@@ -105,20 +105,38 @@
             let img = document.getElementById("babyImage");
             let text = document.getElementById("midiText");
             let video = document.getElementById("babyVideo");
-            let text = document.getElementById("resultText");
+            let texttwo = document.getElementById("resultText");
             let balloon = document.getElementById("balloon");
             let balloontwo = document.getElementById("balloontwo");
 
             img.style.opacity = "1";  
             img.style.clipPath = "inset(0 0 0 0)";
-
+            babyImage.style.opacity = "1";
+            
+            
             setTimeout(() => {
-                text.style.opacity = "1";
+                babyImage.style.opacity = "0";
+                
                 // さらに2秒後に画像を表示
                 setTimeout(() => {
-                    extraImg.style.opacity = "1";
+                    text.style.opacity = "1";
                     // さらに2秒後にバルーンを浮かび上がらせる
                     setTimeout(() => {
+                        text.style.opacity = "0";
+
+                        setTimeout(() => {
+                            video.style.opacity = "1";
+                            video.style.clipPath = "inset(0 0 0 0)";
+                            video.play();
+                            
+                            setTimeout(() => {
+                                texttwo.style.opacity = "0";
+                            
+                            
+                        
+                        
+                        
+                        
                         balloon.style.opacity = "1";
                         balloon.style.transform = "translateY(-200px)";
                         balloontwo.style.opacity = "1";
