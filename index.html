@@ -115,30 +115,30 @@
             setTimeout(() => {
                 babyImage.style.opacity = "0";
                 text.style.opacity = "0";
-    
+                
+                setTimeout(() => {
+                    video.style.opacity = "1";
+                    video.style.clipPath = "inset(0 0 0 0)";
+                    video.play();
+                    
+                    setTimeout(() => {
+                        texttwo.style.opacity = "1";
+                        
                         setTimeout(() => {
-                            video.style.opacity = "1";
-                            video.style.clipPath = "inset(0 0 0 0)";
-                            video.play();
+                            balloon.style.opacity = "1";
+                            balloon.style.transform = "translateY(-200px)";
+                            balloontwo.style.opacity = "1";
+                            balloontwo.style.transform = "translateY(-200px)";
                             
                             setTimeout(() => {
-                                texttwo.style.opacity = "1";
-                                
-                                setTimeout(() => {
-                                    balloon.style.opacity = "1";
-                                    balloon.style.transform = "translateY(-200px)";
-                                    balloontwo.style.opacity = "1";
-                                    balloontwo.style.transform = "translateY(-200px)";
-                                    
-                                    setTimeout(() => {
-                                        balloon.style.opacity = "0";
-                                        balloon.style.transform = "translateY(-100px)";
-                                        balloontwo.style.opacity = "0";
-                                        balloontwo.style.transform = "translateY(-100px)";
-                                    }, 2000);
-                                }, 500);
-                            }, 10000);
-                        }, 2000);
+                                balloon.style.opacity = "0";
+                                balloon.style.transform = "translateY(-100px)";
+                                balloontwo.style.opacity = "0";
+                                balloontwo.style.transform = "translateY(-100px)";
+                            }, 2000);
+                        }, 500);
+                    }, 10000);
+                }, 1000);
             }, 4000);
         }
     </script>
