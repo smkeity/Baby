@@ -131,25 +131,25 @@
                             
                             setTimeout(() => {
                                 texttwo.style.opacity = "0";
-                            
-                            
-                        
-                        
-                        
-                        
-                        balloon.style.opacity = "1";
-                        balloon.style.transform = "translateY(-200px)";
-                        balloontwo.style.opacity = "1";
-                        balloontwo.style.transform = "translateY(-200px)";
-                        setTimeout(() => {
-                            balloon.style.opacity = "0";
-                            balloon.style.transform = "translateY(-100px)";
-                            balloontwo.style.opacity = "0";
-                            balloontwo.style.transform = "translateY(-100px)";
-                        }, 2000);
-                    }, 500);
-                }, 0);
-            }, 3000);
+                                
+                                setTimeout(() => {
+                                    balloon.style.opacity = "1";
+                                    balloon.style.transform = "translateY(-200px)";
+                                    balloontwo.style.opacity = "1";
+                                    balloontwo.style.transform = "translateY(-200px)";
+                                    
+                                    setTimeout(() => {
+                                        balloon.style.opacity = "0";
+                                        balloon.style.transform = "translateY(-100px)";
+                                        balloontwo.style.opacity = "0";
+                                        balloontwo.style.transform = "translateY(-100px)";
+                                    }, 2000);
+                                }, 500);
+                            }, 0);
+                        }, 3000);
+                    }, 2000);
+                }, 1000);
+            }, 5000);
         }
     </script>
 
