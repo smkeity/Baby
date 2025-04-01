@@ -102,17 +102,14 @@
            
     <script>
         function showSequence() {
-            let img = document.getElementById("babyImage");
+            let babyImage = document.getElementById("babyImage");
             let text = document.getElementById("midiText");
             let video = document.getElementById("babyVideo");
             let texttwo = document.getElementById("resultText");
             let balloon = document.getElementById("balloon");
             let balloontwo = document.getElementById("balloontwo");
 
-            img.style.opacity = "1";  
-            img.style.clipPath = "inset(0 0 0 0)";
             babyImage.style.opacity = "1";
-            
             
             setTimeout(() => {
                 babyImage.style.opacity = "0";
