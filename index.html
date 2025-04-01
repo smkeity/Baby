@@ -35,7 +35,17 @@
             font-size: 20px;  /* 例: 少し大きく */
             font-weight: bold; /* 文字を少し太くする */
         }
-        #babyImage, #babyVideo, #midiText {
+        #babyImage, #babyVideo {
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            transform: translateX(-50%);
+            transition: opacity 1s ease-in-out;
+        }
+        
+        #babyVideo {
+
+        #midiText {
             display: block;
             margin: auto;
             opacity: 0;
@@ -43,6 +53,7 @@
         }
         
         #babyVideo {
+            opacity: 0;
             clip-path: inset(0 0 100% 0); /* 上からスライド表示 */
             transition: clip-path 2s ease-out, opacity 2s ease-out;
         }
