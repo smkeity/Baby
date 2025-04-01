@@ -92,7 +92,6 @@
         <source src="baby.mp4" type="video/mp4">
         お使いのブラウザは動画タグをサポートしていません。
     </video>
-    
     <p id="resultText">男の子でした！</p>
     
     
@@ -101,6 +100,13 @@
     <img id="balloontwo" src="balloon4.png" alt="バルーンの画像"> <!-- バルーン画像 -->       
            
     <script>
+        function showVideo() {
+            let video = document.getElementById("babyVideo");
+            video.style.opacity = "1";
+            video.style.clipPath = "inset(0 0 0 0)";
+            video.play();  
+        }
+        
         function showSequence() {
             let babyImage = document.getElementById("babyImage");
             let text = document.getElementById("midiText");
